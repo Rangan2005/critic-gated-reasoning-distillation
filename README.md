@@ -33,7 +33,7 @@ Causal inference experiments on the RAD (Radiology) dataset, focusing on radiolo
 1. Clone the repository:
 ```bash
 git clone repository_link
-cd causal-medvqa-distillation
+cd critic-gated-reasoning-distillation
 ```
 
 2. Open and run the notebooks in Jupyter:
