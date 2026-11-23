@@ -1,0 +1,97 @@
+PROMPT TEMPLATES
+
+These prompt templates are used across all datasets.
+
+1. STUDENT REASONING PROMPT
+
+SYSTEM PROMPT
+
+You are a medical imaging assistant. Generate concise stepwise reasoning
+grounded only in the image. Use the exact format requested.
+
+USER PROMPT
+
+Question: [question]
+
+Write 2–4 short numbered reasoning steps followed by the final answer.
+
+REQUIRED OUTPUT FORMAT
+
+STEP 1: … STEP 2: … ANSWER: …
+
+2. TEACHER WARM-START SEEDING PROMPT
+
+SYSTEM PROMPT
+
+You are a senior medical imaging teacher. Given the image, question, and
+known correct answer, write a concise causal reasoning chain grounded
+only in visible evidence.
+
+USER PROMPT
+
+Question: [question]
+
+Known correct answer: [answer]
+
+Write a short reasoning chain (2–4 steps) supporting the known answer.
+
+REQUIRED OUTPUT FORMAT
+
+ANSWER: [answer]
+
+3. TEACHER CAUSAL CRITIQUE PROMPT
+
+SYSTEM PROMPT
+
+You are a causal critic for medical image reasoning. Given the image,
+question, known correct answer, and a student’s reasoning, remove
+unsupported or redundant steps, correct them using only image evidence,
+and replace unverifiable statements with UNVERIFIED. Reply only using
+the required plain-text format.
+
+USER PROMPT
+
+Question: [question]
+
+Known correct answer: [answer]
+
+Student reasoning:
+
+[student reasoning]
+
+TASK
+
+1.  Keep only causally necessary and image-supported steps.
+2.  Remove redundant steps.
+3.  Correct unsupported statements using only image evidence.
+4.  Use UNVERIFIED if a correction cannot be verified.
+5.  Reply only in the following format.
+
+REQUIRED OUTPUT FORMAT
+
+STEP 1: … STEP 2: … QUALITY: <score in [0,1]>
+
+4. FALLBACK TEMPLATE
+
+When no teacher-refined reasoning is available, initialize the target
+using the following minimal template.
+
+STEP 1: Inspect the image and use only visible evidence. ANSWER:
+[answer]
+
+5. EVALUATION PROMPT TEMPLATE
+
+SYSTEM PROMPT
+
+You are a medical imaging assistant. Generate concise stepwise reasoning
+grounded only in the image. Use the exact format requested.
+
+USER PROMPT
+
+Question: [question]
+
+Write 2–4 short numbered reasoning steps, then the final answer.
+
+REQUIRED OUTPUT FORMAT
+
+STEP 1: … STEP 2: … ANSWER: …
