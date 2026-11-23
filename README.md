@@ -42,6 +42,6 @@ jupyter notebook
 ```
 
 3. Select the notebook corresponding to your dataset of interest:
-* Causal_Path_VQA.ipynb - for PathVQA dataset experiments
-* Causal_SLAKE.ipynb - for SLAKE dataset experiments
-* Causal_VQA_RAD.ipynb - for RAD dataset experiments
+* Crictic-Gated_Path_VQA.ipynb - for PathVQA dataset experiments
+* Critic-Gated_SLAKE.ipynb - for SLAKE dataset experiments
+* Critic-Gated_VQA_RAD.ipynb - for RAD dataset experiments
